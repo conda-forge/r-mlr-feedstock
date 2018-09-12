@@ -1,7 +1,6 @@
-{% set version = '2.12.1' %}
+{% set version = '2.13' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
-{% set cran_mirror = 'https://cran.r-project.org' %}
 
 package:
   name: r-mlr
@@ -12,7 +11,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/mlr_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/mlr/mlr_{{ version }}.tar.gz
-  sha256: 9cbb98b82eb493b783fe8808a18d76f32881d941364466ef8829b852fabbc82c
+  sha256: e8729be7acddc1ea124c44f9493a8b903c5f54b97e09c714366553aed733011d
 
 build:
   merge_build_host: True  # [win]
@@ -28,8 +27,9 @@ requirements:
     - {{native}}toolchain        # [win]
     - {{posix}}filesystem        # [win]
     - {{posix}}make
-    - {{posix}}sed  # [win]
-    - {{posix}}coreutils  # [win]
+    - {{posix}}sed               # [win]
+    - {{posix}}coreutils         # [win]
+    - {{posix}}zip               # [win]
   host:
     - r-base
     - r-bbmisc >=1.11
@@ -82,3 +82,4 @@ extra:
     - daler
     - jdblischak
     - cbrueffer
+    - dbast
