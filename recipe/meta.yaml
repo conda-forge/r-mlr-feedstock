@@ -1,4 +1,4 @@
-{% set version = '2.14.0' %}
+{% set version = "2.15.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/mlr_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/mlr/mlr_{{ version }}.tar.gz
-  sha256: 1f72184400678386c7c44297c4c92a448b50148de700df5ba0438d4e486e944a
+  sha256: a3c2c2bd65a87d90b5e5e877b1ef8e7712e76b4eb1660d3f69672a1860ca5324
 
 build:
   merge_build_host: True  # [win]
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
