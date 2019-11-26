@@ -1,4 +1,4 @@
-{% set version = "2.15.0" %}
+{% set version = "2.16.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/mlr_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/mlr/mlr_{{ version }}.tar.gz
-  sha256: a3c2c2bd65a87d90b5e5e877b1ef8e7712e76b4eb1660d3f69672a1860ca5324
+  sha256: 3db8141d9cbb71139c9bf3a3ea995524322512221b56e6bcf44338d24f84e76a
 
 build:
   merge_build_host: True  # [win]
@@ -62,6 +62,7 @@ test:
 about:
   home: https://github.com/mlr-org/mlr
   license: BSD_2_clause
+  license_file: LICENSE
   summary: Interface to a large number of classification and regression techniques, including
     machine-readable parameter descriptions. There is also an experimental extension
     for survival analysis, clustering and general, example-specific cost-sensitive learning.
