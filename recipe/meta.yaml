@@ -21,6 +21,17 @@ build:
 
 requirements:
   build:
+    - cross-r-base {{ r_base }}  # [build_platform != target_platform]
+    - r-ggplot2                  # [build_platform != target_platform]
+    - r-survival                 # [build_platform != target_platform]
+    - r-stringi                  # [build_platform != target_platform]
+    - r-bbmisc                   # [build_platform != target_platform]
+    - r-checkmate                # [build_platform != target_platform]
+    - r-backports                # [build_platform != target_platform]
+    - r-parallelmap              # [build_platform != target_platform]
+    - r-paramhelpers             # [build_platform != target_platform]
+    - r-xml                      # [build_platform != target_platform]
+    - r-data.table               # [build_platform != target_platform]
     - {{ compiler('c') }}              # [not win]
     - {{ stdlib("c") }}                # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
